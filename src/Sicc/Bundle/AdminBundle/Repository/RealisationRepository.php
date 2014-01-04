@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class RealisationRepository extends EntityRepository
 {
+    public function findByCounted()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT COUNT(a) FROM SiccAdminBundle:Realisation a')
+            ->getSingleScalarResult();
+    }
 }

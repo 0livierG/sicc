@@ -72,7 +72,7 @@ swiftmailer:
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
-    user_class: Sicc\Bundle\UserBundle\Entity\User
+    user_class: Sicc\Bundle\UserBundle\Entity\Member
     group:
             group_class: Sicc\Bundle\UserBundle\Entity\Group
     #registration:

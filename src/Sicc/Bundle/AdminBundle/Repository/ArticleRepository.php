@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class ArticleRepository extends EntityRepository
 {
+    public function findByCounted()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT COUNT(a) FROM SiccAdminBundle:Article a')
+            ->getSingleScalarResult();
+    }
 }

@@ -39,9 +39,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li class="active"><a href="#"><i class="fa fa-home"></i> Accueil</a></li>
+                <li class="active"><a href="{{ path('admin_homepage') }}"><i class="fa fa-home"></i> Accueil</a></li>
                 <li><a href="{{ path('admin_realisation_index') }}"><i class="fa fa-scissors"></i> Les réalisations</a></li>
-                <li><a href="#"><i class="fa fa-archive"></i> Les Articles</a></li>
+                <li><a href="{{ path('admin_article_index') }}"><i class="fa fa-archive"></i> Les Articles</a></li>
+                <li><a href="{{ path('admin_user_index') }}"><i class="fa fa-user"></i> Les membres</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Toogle <b class="caret"></b></a>
                     <ul class="dropdown-menu">

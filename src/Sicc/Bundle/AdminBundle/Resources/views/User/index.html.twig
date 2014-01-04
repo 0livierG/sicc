@@ -1,0 +1,45 @@
+{% extends '::admin_header.html.twig' %}
+
+{% block body -%}
+    
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Gestion Membres <small>Sicc.com</small></h1>
+            <ol class="breadcrumb">
+                <li class="active"><i class="fa fa-dashboard"></i> Membres</li>
+            </ol>
+        </div>
+    </div><!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-money"></i></h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped tablesorter">
+                            <thead>
+                            <tr>
+
+                                <th>Nom utilisateur</th>
+                                <th>Email</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for entity in entities %}
+                                <tr>
+                                    <td>{{ entity.username }}</td>
+                                    <td>{{ entity.email }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.row -->
+
+    {% endblock %}

@@ -50,7 +50,27 @@ class ArticleController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            //upload d'img
+            //on définit le dossier ou envoyer les images
+            $dir = "img/article";
+
+            //on recupère le nom original du fichier
+            $nomBase = $form['illustration']->getData()->getClientOriginalName();
+            //on découpe le nom du fichier pr recup l'extension
+            $extension=strrchr($nomBase,'.');
+            $extension=substr($extension,1) ;
+            //on génère le nouveau nom du fichier
+            $randNom = rand(0,1000000);
+            $dateNom = time();
+            $NewNom = 'img_'.$randNom.$dateNom.'.'.$extension;
+
+            //upload de l'image avec son nouveau nom
+            $form['illustration']->getData()->move($dir, $NewNom);
+
+            $entity->setIllustration($NewNom);
+
             $em->persist($entity);
+
             $em->flush();
 
             return $this->redirect($this->generateUrl('admin_article_show', array('id' => $entity->getId())));
@@ -191,9 +211,30 @@ class ArticleController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            //upload d'img
+            //on définit le dossier ou envoyer les images
+            $dir = "img/article";
+
+            //on recupère le nom original du fichier
+            $nomBase = $editForm['illustration']->getData()->getClientOriginalName();
+            //on découpe le nom du fichier pr recup l'extension
+            $extension=strrchr($nomBase,'.');
+            $extension=substr($extension,1) ;
+            //on génère le nouveau nom du fichier
+            $randNom = rand(0,1000000);
+            $dateNom = time();
+            $NewNom = 'img_'.$randNom.$dateNom.'.'.$extension;
+
+            //upload de l'image avec son nouveau nom
+            $editForm['illustration']->getData()->move($dir, $NewNom);
+
+            $entity->setIllustration($NewNom);
+
+            $em->persist($entity);
+
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_article_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_article_index'));
         }
 
         return array(

@@ -37,5 +37,8 @@ admin_article_update:
 admin_article_delete:
     pattern:  /administration/article/delete/{id}
     defaults: { _controller: SiccAdminBundle:Article:delete }
+admin_user_index:
+    pattern:  /administration/user/index
+    defaults: { _controller: SiccAdminBundle:User:index }
 
 
