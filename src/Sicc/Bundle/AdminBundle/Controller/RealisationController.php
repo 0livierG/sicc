@@ -147,7 +147,7 @@ class RealisationController extends Controller
     /**
      * Displays a form to edit an existing Realisation entity.
      *
-     * @Route("/{id}/edit", name="realisation_edit")
+     * @Route("/{id}/edit", name="admin_realisation_edit")
      * @Method("GET")
      * @Template()
      */
@@ -181,7 +181,7 @@ class RealisationController extends Controller
     private function createEditForm(Realisation $entity)
     {
         $form = $this->createForm(new RealisationType(), $entity, array(
-            'action' => $this->generateUrl('realisation_update', array('id' => $entity->getId())),
+            'action' => $this->generateUrl('admin_realisation_update', array('id' => $entity->getId())),
             'method' => 'PUT',
         ));
 
@@ -192,7 +192,7 @@ class RealisationController extends Controller
     /**
      * Edits an existing Realisation entity.
      *
-     * @Route("/{id}", name="realisation_update")
+     * @Route("/{id}", name="admin_realisation_update")
      * @Method("PUT")
      * @Template("SiccAdminBundle:Realisation:edit.html.twig")
      */
@@ -235,7 +235,7 @@ class RealisationController extends Controller
 
             $em->flush();
 
-            return $this->redirect($this->generateUrl('realisation_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_realisation_edit', array('id' => $id)));
         }
 
         return array(

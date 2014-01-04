@@ -16,5 +16,26 @@ admin_realisation_create:
 admin_realisation_delete:
     pattern:  /administration/realisation/delete/{id}
     defaults: { _controller: SiccAdminBundle:Realisation:delete }
+admin_realisation_update:
+    pattern:  /administration/realisation/update/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:update }
+admin_article_index:
+    pattern:  /administration/article/index
+    defaults: { _controller: SiccAdminBundle:Article:index }
+admin_article_show:
+    pattern:  /administration/article/show/{id}
+    defaults: { _controller: SiccAdminBundle:Article:show }
+admin_article_edit:
+    pattern:  /administration/article/edit/{id}
+    defaults: { _controller: SiccAdminBundle:Article:edit }
+admin_article_create:
+    pattern:  /administration/article/new
+    defaults: { _controller: SiccAdminBundle:Article:create }
+admin_article_update:
+    pattern:  /administration/article/update/{id}
+    defaults: { _controller: SiccAdminBundle:Article:update }
+admin_article_delete:
+    pattern:  /administration/article/delete/{id}
+    defaults: { _controller: SiccAdminBundle:Article:delete }
 
 
