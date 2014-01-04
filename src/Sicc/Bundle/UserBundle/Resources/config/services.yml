@@ -1,0 +1,10 @@
+parameters:
+#    sicc_user.example.class: Sicc\Bundle\UserBundle\Example
+
+services:
+       sicc_user.registration.form.type:
+            class: Sicc\UserBundle\Form\Type\RegistrationFormType
+            arguments: [%fos_user.model.user.class%]
+            tags:
+                - { name: form.type, alias: sicc_user_registration }
+
