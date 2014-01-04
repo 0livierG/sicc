@@ -22,7 +22,7 @@
                         <table class="table table-bordered table-hover table-striped tablesorter">
                             <thead>
                             <tr>
-                                <th>Id</th>
+
                                 <th>Titre</th>
                                 <th>Description</th>
                                 <th>Illustration</th>
@@ -30,30 +30,22 @@
                                 <th>Commanditaire</th>
                                 <th>Ville</th>
                                 <th>Codepostal</th>
-                                <th>Actions</th>
+                                <th>Voir</th>
+                                <th>Supprimer</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for entity in entities %}
                                 <tr>
-                                    <td><a href="{{ path('admin_realisation_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                                     <td>{{ entity.titre }}</td>
                                     <td>{{ entity.description }}</td>
-                                    <td>{{ entity.illustration }}</td>
+                                    <td ><img class="td-img" src="{{ asset('img/realisations/'~entity.illustration) }}"/></td>
                                     <td>{{ entity.date }}</td>
                                     <td>{{ entity.commanditaire }}</td>
                                     <td>{{ entity.ville }}</td>
                                     <td>{{ entity.codePostal }}</td>
-                                    <td>
-                                        <ul>
-                                            <li>
-                                                <a href="{{ path('admin_realisation_show', { 'id': entity.id }) }}">show</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ path('admin_realisation_edit', { 'id': entity.id }) }}">edit</a>
-                                            </li>
-                                        </ul>
-                                    </td>
+                                    <td><button class="btn btn-info"><a href="{{ path('admin_realisation_show', { 'id': entity.id }) }}">Voir</a></button></td>
+                                    <td><button class="btn btn-danger"><a href="{{ path('admin_realisation_edit', { 'id': entity.id }) }}">Editer</a></button></td>
                                 </tr>
                             {% endfor %}
                             </tbody>

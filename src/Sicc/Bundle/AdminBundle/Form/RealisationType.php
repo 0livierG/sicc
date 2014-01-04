@@ -15,13 +15,13 @@ class RealisationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre')
-            ->add('description')
-            ->add('illustration')
-            ->add('date')
-            ->add('commanditaire')
-            ->add('ville')
-            ->add('codePostal')
+            ->add('titre','text', array('label' => 'Titre'))
+            ->add('description','text', array('label' => 'Description'))
+            ->add('illustration','file', array('label' => 'Illustration de la réalisation', 'data_class'=>null))
+            ->add('date','text',array('label'=>'Date de réalisation'))
+            ->add('commanditaire','text',array('label'=>'Commanditaire du projet'))
+            ->add('ville','text',array('label'=>'Ville'))
+            ->add('codePostal','text',array('label'=>'Code postal'))
         ;
     }
     

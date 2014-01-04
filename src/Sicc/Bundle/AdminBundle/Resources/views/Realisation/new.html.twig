@@ -1,10 +1,12 @@
-{% extends '::base.html.twig' %}
+{% extends '::admin_header.html.twig' %}
 
 {% block body -%}
     <h1>Realisation creation</h1>
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
 
+    {{ form_end(form) }}
         <ul class="record_actions">
     <li>
         <a href="{{ path('admin_realisation_index') }}">

@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Realisation</h1>
 
-    <table class="record_properties">
+    <table class="record_properties ">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -19,7 +19,7 @@
             </tr>
             <tr>
                 <th>Illustration</th>
-                <td>{{ entity.illustration }}</td>
+                <td class="td-img"><img src="{{ asset('img/realisations/'~entity.illustration) }}"/></td>
             </tr>
             <tr>
                 <th>Date</th>
