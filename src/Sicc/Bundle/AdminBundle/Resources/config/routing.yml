@@ -55,3 +55,21 @@ admin_groupemembre_edit:
 admin_groupemembre_update:
     pattern:  /administration/groupe-membre/update/{id}
     defaults: { _controller: SiccAdminBundle:GroupeMembre:update }
+admin_fichier:
+    pattern:  /administration/fichier
+    defaults: { _controller: SiccAdminBundle:Fichier:index }
+admin_fichier_create:
+    pattern:  /administration/fichier/create
+    defaults: { _controller: SiccAdminBundle:Fichier:create }
+admin_fichier_show:
+    pattern:  /administration/fichier/show/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:show }
+admin_fichier_delete:
+    pattern:  /administration/fichier/delete/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:delete }
+admin_fichier_edit:
+    pattern:  /administration/fichier/edit/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:edit }
+admin_fichier_update:
+    pattern:  /administration/fichier/update/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:update }

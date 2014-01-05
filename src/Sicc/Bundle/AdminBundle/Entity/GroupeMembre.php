@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * GroupeMembre
  *
  * @ORM\Table(name="groupe_membre")
- * @ORM\Entity(repositoryClass="Sicc\Bundle\AdminBundle\Entity\GroupeMembreRepository")
+ * @ORM\Entity(repositoryClass="Sicc\Bundle\AdminBundle\Repository\GroupeMembreRepository")
  */
 class GroupeMembre
 {
@@ -35,6 +35,11 @@ class GroupeMembre
      */
     private $description;
 
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Fichier", mappedBy="groupes")
+     */
+    private $fichiers;
 
     /**
      * Get id
@@ -90,5 +95,9 @@ class GroupeMembre
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function __toString(){
+        return $this->intitule;
     }
 }

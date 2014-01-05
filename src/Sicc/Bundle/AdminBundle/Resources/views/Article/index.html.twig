@@ -31,12 +31,11 @@
                             {% for entity in entities %}
                                 <tr>
                                     <td>{{ entity.titre }}</td>
-                                    <td>{{ entity.description }}</td>
+                                    <td>{{ entity.description|length > 100 ? entity.description|slice(0, 100) ~ '...' : entity.description  }}</td>
                                     <td><img class="img_table_admin" src="{{ asset('img/articles/'~entity.illustration) }}"></td>
                                     <td>
                                         <a href="{{ path('admin_article_show', { 'id': entity.id }) }}"><button class="btn btn-info"><i class="fa fa-eye"></i> Voir</button></a>
                                         <a href="{{ path('admin_article_edit', { 'id': entity.id }) }}"><button class="btn btn-warning"><i class="fa fa-pencil"></i> Editer</button></a>
-                                        <a href="{{ path('admin_article_delete', { 'id': entity.id }) }}"><button class="btn btn-danger"><i class="fa fa-trash-o"></i> Supprimer</button></a>
                                     </td>
                                 </tr>
                             {% endfor %}

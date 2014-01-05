@@ -3,9 +3,9 @@
 {% block body -%}
      <div class="row">
         <div class="col-lg-12">
-            <h1>Réalisation</h1>
+            <h1>Réalisations</h1>
             <ol class="breadcrumb">
-                <li class="active"><i class="fa fa-dashboard"></i> R&alisation</li>
+                <li class="active"><i class="fa fa-dashboard"></i> Réalisations</li>
             </ol>
         </div>
     </div><!-- /.row -->
@@ -34,7 +34,7 @@
                             {% for entity in entities %}
                                 <tr>
                                     <td>{{ entity.titre }}</td>
-                                    <td>{{ entity.description }}</td>
+                                    <td>{{ entity.description|length > 100 ? entity.description|slice(0, 100) ~ '...' : entity.description  }}</td>
                                     <td><img class="img_table_admin" src="{{ asset('img/realisations/'~entity.illustration) }}"></td>
                                     <td>{{ entity.commanditaire }}</td>
                                     <td>{{ entity.date }}</td>
@@ -42,7 +42,6 @@
                                     <td>
                                         <a href="{{ path('admin_realisation_show', { 'id': entity.id }) }}"><button class="btn btn-info"><i class="fa fa-eye"></i> Voir</button></a>
                                         <a href="{{ path('admin_realisation_edit', { 'id': entity.id }) }}"><button class="btn btn-warning"><i class="fa fa-pencil"></i> Editer</button></a>
-                                        <a href="{{ path('admin_realisation_delete', { 'id': entity.id }) }}"><button class="btn btn-danger"><i class="fa fa-trash-o"></i> Supprimer</button></a>
                                     </td>
                                 </tr>
                             {% endfor %}

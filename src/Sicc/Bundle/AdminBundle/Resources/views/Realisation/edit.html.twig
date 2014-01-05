@@ -1,16 +1,71 @@
 {% extends '::admin_header.html.twig' %}
 
 {% block body -%}
-    <h1>Realisation edit</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Edition article</h1>
+            <ol class="breadcrumb">
+                <li class="active"><i class="fa fa-dashboard"></i> Article</li>
+            </ol>
+        </div>
+    </div><!-- /.row -->
 
-    {{ form(edit_form) }}
+    <div class="row">
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin_realisation') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+        {{ form_start(edit_form) }}
+        {{ form_errors(edit_form) }}
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                {{ form_label(edit_form.titre) }}
+                {{ form_errors(edit_form.titre) }}
+                {{ form_widget(edit_form.titre, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.description) }}
+                {{ form_errors(edit_form.description) }}
+                {{ form_widget(edit_form.description, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.illustration) }}
+                {{ form_errors(edit_form.illustration) }}
+                {{ form_widget(edit_form.illustration, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.commanditaire) }}
+                {{ form_errors(edit_form.commanditaire) }}
+                {{ form_widget(edit_form.commanditaire, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.date) }}
+                {{ form_errors(edit_form.date) }}
+                {{ form_widget(edit_form.date, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.codePostal) }}
+                {{ form_errors(edit_form.codePostal) }}
+                {{ form_widget(edit_form.codePostal, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="form-group">
+                {{ form_widget(edit_form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+                <a class="btn btn-info" href="{{ path('admin_realisation') }}">
+                    Retour liste
+                </a>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+
+    <div class="row">
+        {{ form_start(delete_form) }}
+        {{ form_errors(delete_form) }}
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+            <div class="form-group">
+                {{ form_widget(delete_form.submit, {'attr': {'class': 'btn btn-danger'}}) }}
+            </div>
+        </div>
+        {{ form_end(delete_form) }}
+    </div>
 {% endblock %}
