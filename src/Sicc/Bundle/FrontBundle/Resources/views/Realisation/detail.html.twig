@@ -1,0 +1,34 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="row" id="wrapper-realisation-detail">
+        <div class="span7 top-box-accueil">
+            <div class="inner">
+                <p class="top-box-accueil-content">
+                    <img class="top-box-accueil-img" src="{{ asset('img/realisations/'~realisation.illustration) }}">
+                </p>
+            </div>
+        </div>
+        <div class="span5">
+            <h2>{{ realisation.titre }}</h2>
+            <div class="info-realisation-detail">
+                <span class="label-realisation-detail">Commanditaire : </span><span>{{ realisation.commanditaire }}</span>
+            </div>
+            <div class="info-realisation-detail">
+                <span class="label-realisation-detail">Date de réalisation : </span><span>{{ realisation.date }}</span>
+            </div>
+            <div class="info-realisation-detail">
+                <span class="label-realisation-detail">Code postal : </span><span>{{ realisation.codePostal }}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            <h2>Description</h2>
+            <p>
+                {{ realisation.description }}
+            </p>
+        </div>
+    </div>
+    </div>
+{% endblock body %}

@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="row">
+        <div class="span12">
+            <div>
+                <h2>Nos réalisations</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="span5 border-h3"></div>
+        <div class="span2"><h3>Les réalisations</h3></div>
+        <div class="span5 border-h3"></div>
+    </div>
+    <div class="row">
+        {% for realisation in realisations %}
+            <div class="span4 top-box-accueil">
+                <div class="inner">
+                    <p class="top-box-accueil-content">
+                        <img class="top-box-accueil-img" src="{{ asset('img/realisations/'~realisation.illustration) }}">
+                        <a href="{{ path('sicc_front_realisation_detail', { 'id': realisation.id }) }}">{{ realisation.titre }}</a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock body %}

@@ -1,3 +1,9 @@
 sicc_front_homepage:
     pattern:  /accueil
     defaults: { _controller: SiccFrontBundle:Default:index }
+sicc_front_realisation:
+    pattern:  /realisation
+    defaults: { _controller: SiccFrontBundle:Realisation:index }
+sicc_front_realisation_detail:
+    pattern:  /realisation/{id}
+    defaults: { _controller: SiccFrontBundle:Realisation:detail }

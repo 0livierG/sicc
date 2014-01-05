@@ -5,8 +5,8 @@
     display: block;
     float: left;
     margin-right: auto;
-    margin-left: 255px;
-    width: 53%;
+    margin-left: 170px;
+    width: 67%;
     font-size: 20px;
     font-family: 'Oswald', sans-serif;
     font-weight: normal;
@@ -17,7 +17,7 @@
     padding: 15px;
 }
 .navbar .nav li{
-    color: red;
+
 }
 .navbar-fixed-top, .navbar-fixed-bottom{
     position: relative;
@@ -88,6 +88,9 @@ p{
     width: 100%;
 }
 /*Accueil*/
+.bloc-black-accueil{
+    background: #000000;
+}
 #coin-slider{
     margin-top: 15px;
 }
@@ -120,6 +123,21 @@ p{
 }
 .top-box-accueil-img{
     opacity: 1;
+}
+
+/*Realisation details*/
+#wrapper-realisation-detail{
+    margin-top: 15px;
+}
+.label-realisation-detail{
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    display: block;
+    float: left;
+    width: 34%;
+}
+.info-realisation-detail{
+    margin-bottom: 25px;
 }
 /*Footer*/
 #copyright{

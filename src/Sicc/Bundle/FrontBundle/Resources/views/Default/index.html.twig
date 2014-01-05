@@ -2,7 +2,7 @@
 
 {% block body -%}
 </div>
-<div style="background: #000000">
+<div class="bloc-black-accueil">
     <div class="container">
         <div class="row">
             <div id="slider" class="span12">
@@ -23,7 +23,6 @@
             <div class="span5 border-h3"></div>
             <div class="span2"><h3>Nos rubriques</h3></div>
             <div class="span5 border-h3"></div>
-
     </div>
 
     <div class="row" id="container-top-box-accueil">
@@ -32,7 +31,7 @@
                 <div class="inner">
                     <h4 class="top-box-accueil-title">Les réalisations</h4>
                     <p class="top-box-accueil-content">
-                        <a href="#">
+                        <a href="{{ path('sicc_front_realisation') }}">
                             <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/beta.jpg') }}">
                         </a>
                     </p>
