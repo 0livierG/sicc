@@ -1,0 +1,4 @@
+sicc_admin:
+    resource: "@SiccAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+

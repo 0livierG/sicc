@@ -1,0 +1,57 @@
+admin_index:
+    pattern:  /administration
+    defaults: { _controller: SiccAdminBundle:Default:index }
+admin_realisation:
+    pattern:  /administration/realisation
+    defaults: { _controller: SiccAdminBundle:Realisation:index }
+admin_realisation_create:
+    pattern:  /administration/realisation/create
+    defaults: { _controller: SiccAdminBundle:Realisation:create }
+admin_realisation_show:
+    pattern:  /administration/realisation/show/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:show }
+admin_realisation_delete:
+    pattern:  /administration/realisation/delete/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:delete }
+admin_realisation_edit:
+    pattern:  /administration/realisation/edit/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:edit }
+admin_realisation_update:
+    pattern:  /administration/realisation/update/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:update }
+admin_article:
+    pattern:  /administration/article
+    defaults: { _controller: SiccAdminBundle:Article:index }
+admin_article_create:
+    pattern:  /administration/article/create
+    defaults: { _controller: SiccAdminBundle:Article:create }
+admin_article_show:
+    pattern:  /administration/article/show/{id}
+    defaults: { _controller: SiccAdminBundle:Article:show }
+admin_article_delete:
+    pattern:  /administration/article/delete/{id}
+    defaults: { _controller: SiccAdminBundle:Article:delete }
+admin_article_edit:
+    pattern:  /administration/article/edit/{id}
+    defaults: { _controller: SiccAdminBundle:Article:edit }
+admin_article_update:
+    pattern:  /administration/article/update/{id}
+    defaults: { _controller: SiccAdminBundle:Article:update }
+admin_groupemembre:
+    pattern:  /administration/groupe-membre
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:index }
+admin_groupemembre_create:
+    pattern:  /administration/groupe-membre/create
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:create }
+admin_groupemembre_show:
+    pattern:  /administration/groupe-membre/show/{id}
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:show }
+admin_groupemembre_delete:
+    pattern:  /administration/groupe-membre/delete/{id}
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:delete }
+admin_groupemembre_edit:
+    pattern:  /administration/groupe-membre/edit/{id}
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:edit }
+admin_groupemembre_update:
+    pattern:  /administration/groupe-membre/update/{id}
+    defaults: { _controller: SiccAdminBundle:GroupeMembre:update }
