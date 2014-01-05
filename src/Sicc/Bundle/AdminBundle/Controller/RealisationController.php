@@ -74,7 +74,7 @@ class RealisationController extends Controller
 
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_realisation_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('admin_realisation'));
         }
 
         return array(
@@ -236,7 +236,7 @@ class RealisationController extends Controller
 
             $em->flush();
 
-            return $this->redirect($this->generateUrl('admin_realisation_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('admin_realisation'));
         }
 
         return array(

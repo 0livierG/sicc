@@ -1,6 +1,6 @@
 <?php
 
-namespace Sicc\Bundle\AdminBundle\Entity;
+namespace Sicc\Bundle\AdminBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

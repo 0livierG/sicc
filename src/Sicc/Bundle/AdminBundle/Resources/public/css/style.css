@@ -1,12 +1,4 @@
 /*Administration*/
-body {
-    padding-top: 60px;
-    padding-bottom: 40px;
-
-}
-
-#header-admin{
-    background: #000000;
-    height: 20px;
-    padding: 10px;
+.img_table_admin{
+    max-width: 100px;
 }
