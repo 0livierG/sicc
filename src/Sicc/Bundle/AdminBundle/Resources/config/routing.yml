@@ -37,6 +37,24 @@ admin_article_update:
 admin_article_delete:
     pattern:  /administration/article/delete/{id}
     defaults: { _controller: SiccAdminBundle:Article:delete }
+admin_fichier_index:
+    pattern:  /administration/fichier/index
+    defaults: { _controller: SiccAdminBundle:Fichier:index }
+admin_fichier_show:
+    pattern:  /administration/fichier/show/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:show }
+admin_fichier_edit:
+    pattern:  /administration/fichier/edit/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:edit }
+admin_fichier_create:
+    pattern:  /administration/fichier/new
+    defaults: { _controller: SiccAdminBundle:Fichier:create }
+admin_fichier_update:
+    pattern:  /administration/fichier/update/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:update }
+admin_fichier_delete:
+    pattern:  /administration/fichier/delete/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:delete }
 admin_user_index:
     pattern:  /administration/user/index
     defaults: { _controller: SiccAdminBundle:User:index }
