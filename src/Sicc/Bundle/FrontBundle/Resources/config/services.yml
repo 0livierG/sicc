@@ -1,0 +1,7 @@
+parameters:
+#    sicc_front.example.class: Sicc\Bundle\FrontBundle\Example
+
+services:
+#    sicc_front.example:
+#        class: %sicc_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

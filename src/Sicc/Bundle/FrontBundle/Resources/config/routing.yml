@@ -1,0 +1,3 @@
+sicc_front_homepage:
+    pattern:  /accueil
+    defaults: { _controller: SiccFrontBundle:Default:index }

@@ -2949,6 +2949,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/symfony/swiftmailer-bundle/Symfony/Bundle/SwiftmailerBundle/Resources/views', 'Swiftmailer');
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Resources/views', 'SiccAdmin');
+        $instance->addPath('/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Resources/views', 'SiccFront');
         $instance->addPath('/home/student/public_html/sicc/sicc/src/Acme/DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3434,6 +3435,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'SiccAdminBundle' => 'Sicc\\Bundle\\AdminBundle\\SiccAdminBundle',
+                'SiccFrontBundle' => 'Sicc\\Bundle\\FrontBundle\\SiccFrontBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',

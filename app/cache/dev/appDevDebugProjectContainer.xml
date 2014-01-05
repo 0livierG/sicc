@@ -17,6 +17,7 @@
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="SiccAdminBundle">Sicc\Bundle\AdminBundle\SiccAdminBundle</parameter>
+      <parameter key="SiccFrontBundle">Sicc\Bundle\FrontBundle\SiccFrontBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -2727,6 +2728,10 @@
       <call method="addPath">
         <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Resources/views</argument>
         <argument>SiccAdmin</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Resources/views</argument>
+        <argument>SiccFront</argument>
       </call>
       <call method="addPath">
         <argument>/home/student/public_html/sicc/sicc/src/Acme/DemoBundle/Resources/views</argument>

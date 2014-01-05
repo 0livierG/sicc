@@ -12,6 +12,7 @@ class DefaultController extends Controller
 
         $countArticles = $em->getRepository('SiccAdminBundle:Article')->findOneByCounted();
         $countRealisations = $em->getRepository('SiccAdminBundle:Realisation')->findOneByCounted();
+        $countFichiers = $em->getRepository('SiccAdminBundle:Realisation')->findOneByCounted();
 
 
 

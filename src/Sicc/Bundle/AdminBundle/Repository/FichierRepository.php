@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class FichierRepository extends EntityRepository
 {
+    public function findOneByCounted()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT COUNT(a) FROM SiccAdminBundle:Fichier a')
+            ->getSingleScalarResult();
+    }
 }
