@@ -590,7 +590,7 @@ class appDevDebugProjectContainer extends Container
         $b = new \Doctrine\DBAL\Configuration();
         $b->setSQLLogger($a);
 
-        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'sicc', 'host' => '127.0.0.1', 'port' => NULL, 'user' => 'root', 'password' => NULL, 'charset' => 'UTF8', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
+        return $this->services['doctrine.dbal.default_connection'] = $this->get('doctrine.dbal.connection_factory')->createConnection(array('dbname' => 'sicc', 'host' => '127.0.0.1', 'port' => NULL, 'user' => 'root', 'password' => 'ubuntu', 'charset' => 'UTF8', 'driver' => 'pdo_mysql', 'driverOptions' => array()), $b, new \Symfony\Bridge\Doctrine\ContainerAwareEventManager($this), array());
     }
 
     /**
@@ -2977,7 +2977,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getUriSignerService()
     {
-        return $this->services['uri_signer'] = new \Symfony\Component\HttpKernel\UriSigner('2b4a4e617abeaf64baa8f7c3c7042f61406e38cc');
+        return $this->services['uri_signer'] = new \Symfony\Component\HttpKernel\UriSigner('ddf668d20cacc1cffcdb54aaee50f136');
     }
 
     /**
@@ -3417,7 +3417,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => '/home/student/public_html/sicc/sicc/app',
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => '/home/student/public_html/sicc/sicc/app/cache/dev',
             'kernel.logs_dir' => '/home/student/public_html/sicc/sicc/app/logs',
             'kernel.bundles' => array(
@@ -3441,13 +3441,14 @@ class appDevDebugProjectContainer extends Container
             'database_port' => NULL,
             'database_name' => 'sicc',
             'database_user' => 'root',
-            'database_password' => NULL,
+            'database_password' => 'ubuntu',
             'mailer_transport' => 'smtp',
             'mailer_host' => '127.0.0.1',
             'mailer_user' => NULL,
             'mailer_password' => NULL,
             'locale' => 'en',
-            'secret' => '2b4a4e617abeaf64baa8f7c3c7042f61406e38cc',
+            'secret' => 'ddf668d20cacc1cffcdb54aaee50f136',
+            'database_path' => NULL,
             'controller_resolver.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerResolver',
             'controller_name_converter.class' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\ControllerNameParser',
             'response_listener.class' => 'Symfony\\Component\\HttpKernel\\EventListener\\ResponseListener',
@@ -3501,7 +3502,7 @@ class appDevDebugProjectContainer extends Container
             'debug.stopwatch.class' => 'Symfony\\Component\\Stopwatch\\Stopwatch',
             'debug.container.dump' => '/home/student/public_html/sicc/sicc/app/cache/dev/appDevDebugProjectContainer.xml',
             'debug.controller_resolver.class' => 'Symfony\\Component\\HttpKernel\\Controller\\TraceableControllerResolver',
-            'kernel.secret' => '2b4a4e617abeaf64baa8f7c3c7042f61406e38cc',
+            'kernel.secret' => 'ddf668d20cacc1cffcdb54aaee50f136',
             'kernel.http_method_override' => true,
             'kernel.trusted_hosts' => array(
 
