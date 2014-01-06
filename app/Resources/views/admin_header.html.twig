@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{ asset('bundles/siccadmin/css/style.css') }}">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+
+
 </head>
 
 <body>
@@ -40,7 +42,7 @@
 
         <div class="navbar-header pull-right">
             {% if app.user %}
-                <a class="pull-right btn btn-danger" role="button" href="{{ path('logout') }}" title="Déconnexion">
+                <a class="pull-right btn btn-danger" role="button" href="{{ path('logout') }}" onclick="return confirmationJs('Souhaitez-vous quitter cette section')" title="Déconnexion">
                     <span class="fa fa-sign-out"></span>
                 </a>
             {% endif %}
@@ -77,6 +79,7 @@
     <script src="{{ asset('bundles/siccadmin/js/morris/chart-data-morris.js') }}"></script>
     <script src="{{ asset('bundles/siccadmin/js/tablesorter/jquery.tablesorter.js') }}"></script>
     <script src="{{ asset('bundles/siccadmin/js/tablesorter/tables.js') }}"></script>
+    <script src="{{ asset('bundles/siccadmin/js/script.js') }}"></script>
 
 
 {% endblock %}
