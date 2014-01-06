@@ -2,3 +2,6 @@
 .img_table_admin{
     max-width: 100px;
 }
+.navbar-header .btn{
+    margin:8px 8px 0 0;
+}

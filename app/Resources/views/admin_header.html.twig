@@ -26,7 +26,7 @@
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header pull-left">
             {% if app.user %}
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -37,6 +37,14 @@
             {% endif %}
             <a class="navbar-brand" href="index.html">Sicc</a>
         </div>
+
+        <div class="navbar-header pull-right">
+            {% if app.user %}
+                <a class="pull-right btn btn-danger" role="button" href="{{ path('logout') }}" title="Déconnexion">
+                    <span class="fa fa-sign-out"></span>
+                </a>
+            {% endif %}
+        </div>
         {% if app.user %}
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -45,6 +53,7 @@
                 <li><a href="{{ path('admin_article') }}"><i class="fa fa-archive"></i> Articles</a></li>
                 <li><a href="{{ path('admin_realisation') }}"><i class="fa fa-fire-extinguisher"></i> Réalisations</a></li>
                 <li><a href="{{ path('admin_groupemembre') }}"><i class="fa fa-credit-card"></i> Groupes</a></li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
         {% endif %}
