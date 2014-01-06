@@ -1,10 +1,13 @@
 security:
+
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN]
+
+
 
     providers:
         in_memory:
@@ -32,4 +35,5 @@ security:
                 target: /administration
 
     access_control:
+        - { path: ^/administration, roles: ROLE_ADMIN }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

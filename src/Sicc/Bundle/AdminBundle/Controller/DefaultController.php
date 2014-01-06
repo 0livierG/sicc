@@ -8,10 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        // Si le visiteur n'est pas identifié, on le redirige vers la page de login
-        if (!$this->get('security.context')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
-            return $this->redirect($this->generateUrl('login'));
-        }
 
         $em = $this->getDoctrine()->getManager();
 
