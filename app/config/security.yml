@@ -2,6 +2,7 @@ security:
 
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        Sicc\Bundle\UserBundle\Entity\Membre: plaintext
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -10,6 +11,8 @@ security:
 
 
     providers:
+        main:
+            entity: { class: Sicc\Bundle\UserBundle\Entity\Membre, property: username }
         in_memory:
             memory:
                 users:
@@ -24,7 +27,7 @@ security:
         main:
             pattern:   ^/
             anonymous: true
-            provider:  in_memory
+            provider:  main
             form_login:
                 login_path: login
                 check_path: login_check

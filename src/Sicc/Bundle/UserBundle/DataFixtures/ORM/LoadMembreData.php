@@ -15,7 +15,7 @@ class Membres implements FixtureInterface
     public function load(ObjectManager $manager)
     {
         // Les noms d'utilisateurs à créer
-        $noms = array('winzou', 'John', 'Talus');
+        $noms = array('Olivier', 'Thomas', 'Bob');
 
         foreach ($noms as $i => $nom) {
             // On crée l'utilisateur
@@ -27,7 +27,7 @@ class Membres implements FixtureInterface
 
             // Le sel et les rôles sont vides pour l'instant
             $users[$i]->setSalt('');
-            $users[$i]->setRoles(array());
+            $users[$i]->setRoles(array('ROLE_ADMIN'));
 
             // On le persiste
             $manager->persist($users[$i]);
