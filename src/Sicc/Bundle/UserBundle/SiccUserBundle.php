@@ -6,4 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SiccUserBundle extends Bundle
 {
+    public function getParent(){
+        return "FOSUserBundle";
+    }
 }
