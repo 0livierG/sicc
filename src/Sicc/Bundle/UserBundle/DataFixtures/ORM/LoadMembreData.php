@@ -9,6 +9,9 @@ use Sicc\Bundle\UserBundle\Entity\Membre;
 
 class Membres implements FixtureInterface
 {
+    /**
+     * {@inheritDoc}
+     */
     public function load(ObjectManager $manager)
     {
         // Les noms d'utilisateurs à créer
