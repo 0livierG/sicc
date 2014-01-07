@@ -37,7 +37,6 @@
     <parameter key="mailer_password">null</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="secret">2b4a4e617abeaf64baa8f7c3c7042f61406e38cc</parameter>
-    <parameter key="database_path">null</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
     <parameter key="controller_name_converter.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser</parameter>
     <parameter key="response_listener.class">Symfony\Component\HttpKernel\EventListener\ResponseListener</parameter>
@@ -1650,7 +1649,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>52cade70e6e19</argument>
+            <argument>52cb9f4dc7684</argument>
           </service>
         </argument>
       </argument>
@@ -1920,7 +1919,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>52cade70e6e19</argument>
+            <argument>52cb9f4dc7684</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2331,6 +2330,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="SiccAdminBundle">Sicc\Bundle\AdminBundle\Entity</argument>
+              <argument key="SiccUserBundle">Sicc\Bundle\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2369,10 +2369,23 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>C:\wamp\www\sicc\src\Sicc\Bundle\AdminBundle\Entity</argument>
+                        <argument>C:\wamp\www\sicc\src\Sicc\Bundle\UserBundle\Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Sicc\Bundle\AdminBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\wamp\www\sicc\src\Sicc\Bundle\AdminBundle\Entity</argument>
+                        <argument>C:\wamp\www\sicc\src\Sicc\Bundle\UserBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Sicc\Bundle\UserBundle\Entity</argument>
                 </call>
               </service>
             </argument>
