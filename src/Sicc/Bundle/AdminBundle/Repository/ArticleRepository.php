@@ -18,4 +18,11 @@ class ArticleRepository extends EntityRepository
             ->createQuery('SELECT COUNT(a) FROM SiccAdminBundle:Article a')
             ->getSingleScalarResult();
     }
+
+    public function findByIdDesc(){
+        return $this->getEntityManager()
+            ->createQuery('SELECT a FROM SiccAdminBundle:Article a ORDER BY a.id DESC')
+            ->getResult();
+    }
+
 }

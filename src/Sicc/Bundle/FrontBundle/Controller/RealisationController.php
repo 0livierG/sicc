@@ -15,11 +15,11 @@ class RealisationController extends Controller
         return $this->render('SiccFrontBundle:Realisation:realisation.html.twig',array('realisations'=>$entities));
     }
 
-    public function detailAction($id)
+    public function detailAction($path)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('SiccAdminBundle:Realisation')->findOneById($id);
+        $entity = $em->getRepository('SiccAdminBundle:Realisation')->findOneByPath($path);
 
         return $this->render('SiccFrontBundle:Realisation:detail.html.twig',array('realisation'=>$entity));
     }

@@ -1,0 +1,36 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+        <div class="span12">
+            <h2>Les articles</h2>
+        </div>
+    </div>
+
+    {% for article in articles %}
+        <div class="row article-preview">
+            <div class="span12">
+                <h5>{{ article.titre }}</h5>
+            </div>
+
+            <div class="span3">
+                <img src="{{ asset('img/articles/'~ article.illustration) }}"/>
+            </div>
+            <div class="span9">
+                <p>{{ article.description|length > 500 ? article.description|slice(0, 500) ~ '...' : article.description }}</p>
+            </div>
+
+            <div class="span12 btn-see-more-article">
+                <a href="{{ path('sicc_front_article_focus',{ 'path': article.path }) }}" class="pull-right">
+                    <button class="btn btn-default">
+                        <i class="fa fa-eye"></i> Voir plus
+                    </button>
+                </a>
+            </div>
+            <div class="span12 divider-article"></div>
+
+        </div>
+    {% endfor %}
+
+{% endblock body %}

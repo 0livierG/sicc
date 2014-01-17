@@ -42,6 +42,13 @@ class Article
      */
     private $illustration;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=255, nullable=false)
+     */
+    private $path;
+
 
     /**
      * Get id
@@ -120,5 +127,28 @@ class Article
     public function getIllustration()
     {
         return $this->illustration;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return Article
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
     }
 }

@@ -70,6 +70,10 @@ class ArticleController extends Controller
 
             $entity->setIllustration($NewNom);
 
+            $titleToFormat = $form['titre']->getData();
+            $urlPath = $this->formatTitle($titleToFormat);
+            $entity->setPath($urlPath);
+
             $em->persist($entity);
             $em->flush();
 
@@ -231,6 +235,10 @@ class ArticleController extends Controller
 
             $entity->setIllustration($NewNom);
 
+            $titleToFormat = $editForm['titre']->getData();
+            $urlPath = $this->formatTitle($titleToFormat);
+            $entity->setPath($urlPath);
+
             $em->persist($entity);
 
             $em->flush();
@@ -285,5 +293,12 @@ class ArticleController extends Controller
             ->add('submit', 'submit', array('label' => 'Supprimer'))
             ->getForm()
         ;
+    }
+
+    private function formatTitle($string){
+
+        $formattedString = str_replace(" ", "-",$string );
+
+        return $formattedString;
     }
 }

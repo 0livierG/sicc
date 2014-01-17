@@ -23,7 +23,7 @@
                 <div class="inner">
                     <p class="top-box-accueil-content">
                         <img class="top-box-accueil-img" src="{{ asset('img/realisations/'~realisation.illustration) }}">
-                        <a href="{{ path('sicc_front_realisation_detail', { 'id': realisation.id }) }}">{{ realisation.titre }}</a>
+                        <a href="{{ path('sicc_front_realisation_detail', { 'path': realisation.path }) }}">{{ realisation.titre }}</a>
                     </p>
                 </div>
             </div>

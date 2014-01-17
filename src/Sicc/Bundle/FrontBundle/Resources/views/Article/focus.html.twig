@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="row">
+
+       <div class="span8">
+            <h4>{{ focus.titre }}</h4>
+           <div id="wrapper-img-focus-article"><img src="{{ asset('img/articles/'~focus.illustration) }}"/></div>
+           <p>
+               {{ focus.description }}
+           </p>
+       </div>
+
+        <div class="span4">
+
+            {% for article in articles %}
+                <div class="row wrapper-mini-news">
+                    <h5>{{ article.titre }}</h5>
+                    <p>{{ article.description|length > 50 ? article.description|slice(0, 50) ~ '...' : article.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+{% endblock body %}
