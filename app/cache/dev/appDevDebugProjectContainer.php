@@ -603,8 +603,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
-        $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_2cf31e41fdf64c98748ecaa67f507c8353301675974d48c6e43add42cbb40920');
+        $a = $this->get('annotation_reader');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
         $b->setNamespace('sf2orm_default_2cf31e41fdf64c98748ecaa67f507c8353301675974d48c6e43add42cbb40920');
@@ -612,23 +611,30 @@ class appDevDebugProjectContainer extends Container
         $c = new \Doctrine\Common\Cache\ArrayCache();
         $c->setNamespace('sf2orm_default_2cf31e41fdf64c98748ecaa67f507c8353301675974d48c6e43add42cbb40920');
 
-        $d = new \Doctrine\ORM\Mapping\Driver\DriverChain();
-        $d->addDriver(new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($this->get('annotation_reader'), array(0 => '/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Entity')), 'Sicc\\Bundle\\AdminBundle\\Entity');
+        $d = new \Doctrine\Common\Cache\ArrayCache();
+        $d->setNamespace('sf2orm_default_2cf31e41fdf64c98748ecaa67f507c8353301675974d48c6e43add42cbb40920');
 
-        $e = new \Doctrine\ORM\Configuration();
-        $e->setEntityNamespaces(array('SiccAdminBundle' => 'Sicc\\Bundle\\AdminBundle\\Entity'));
-        $e->setMetadataCacheImpl($a);
-        $e->setQueryCacheImpl($b);
-        $e->setResultCacheImpl($c);
-        $e->setMetadataDriverImpl($d);
-        $e->setProxyDir('/home/student/public_html/sicc/sicc/app/cache/dev/doctrine/orm/Proxies');
-        $e->setProxyNamespace('Proxies');
-        $e->setAutoGenerateProxyClasses(true);
-        $e->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
-        $e->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
-        $e->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+        $e = new \Doctrine\ORM\Mapping\Driver\AnnotationDriver($a, array(0 => '/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Entity', 1 => '/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Entity', 2 => '/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Entity'));
 
-        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $e);
+        $f = new \Doctrine\ORM\Mapping\Driver\DriverChain();
+        $f->addDriver($e, 'Sicc\\Bundle\\AdminBundle\\Entity');
+        $f->addDriver($e, 'Sicc\\Bundle\\FrontBundle\\Entity');
+        $f->addDriver($e, 'Sicc\\Bundle\\ContactBundle\\Entity');
+
+        $g = new \Doctrine\ORM\Configuration();
+        $g->setEntityNamespaces(array('SiccAdminBundle' => 'Sicc\\Bundle\\AdminBundle\\Entity', 'SiccFrontBundle' => 'Sicc\\Bundle\\FrontBundle\\Entity', 'SiccContactBundle' => 'Sicc\\Bundle\\ContactBundle\\Entity'));
+        $g->setMetadataCacheImpl($b);
+        $g->setQueryCacheImpl($c);
+        $g->setResultCacheImpl($d);
+        $g->setMetadataDriverImpl($f);
+        $g->setProxyDir('/home/student/public_html/sicc/sicc/app/cache/dev/doctrine/orm/Proxies');
+        $g->setProxyNamespace('Proxies');
+        $g->setAutoGenerateProxyClasses(true);
+        $g->setClassMetadataFactoryName('Doctrine\\ORM\\Mapping\\ClassMetadataFactory');
+        $g->setDefaultRepositoryClassName('Doctrine\\ORM\\EntityRepository');
+        $g->setNamingStrategy(new \Doctrine\ORM\Mapping\DefaultNamingStrategy());
+
+        $this->services['doctrine.orm.default_entity_manager'] = $instance = call_user_func(array('Doctrine\\ORM\\EntityManager', 'create'), $this->get('doctrine.dbal.default_connection'), $g);
 
         $this->get('doctrine.orm.default_manager_configurator')->configure($instance);
 
@@ -2226,12 +2232,12 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['swiftmailer.mailer.default.transport.real'] = $instance = new \Swift_Transport_EsmtpTransport(new \Swift_Transport_StreamBuffer(new \Swift_StreamFilters_StringReplacementFilterFactory()), array(0 => new \Swift_Transport_Esmtp_AuthHandler(array(0 => new \Swift_Transport_Esmtp_Auth_CramMd5Authenticator(), 1 => new \Swift_Transport_Esmtp_Auth_LoginAuthenticator(), 2 => new \Swift_Transport_Esmtp_Auth_PlainAuthenticator()))), $this->get('swiftmailer.mailer.default.transport.eventdispatcher'));
 
-        $instance->setHost('127.0.0.1');
-        $instance->setPort(25);
-        $instance->setEncryption(NULL);
-        $instance->setUsername(NULL);
-        $instance->setPassword(NULL);
-        $instance->setAuthMode(NULL);
+        $instance->setHost('smtp.gmail.com');
+        $instance->setPort(465);
+        $instance->setEncryption('ssl');
+        $instance->setUsername('thomaschvt');
+        $instance->setPassword('nofxrhcp');
+        $instance->setAuthMode('login');
         $instance->setTimeout(30);
         $instance->setSourceIp(NULL);
 
@@ -2950,6 +2956,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/doctrine/doctrine-bundle/Doctrine/Bundle/DoctrineBundle/Resources/views', 'Doctrine');
         $instance->addPath('/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Resources/views', 'SiccAdmin');
         $instance->addPath('/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Resources/views', 'SiccFront');
+        $instance->addPath('/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Resources/views', 'SiccContact');
         $instance->addPath('/home/student/public_html/sicc/sicc/src/Acme/DemoBundle/Resources/views', 'AcmeDemo');
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views', 'WebProfiler');
         $instance->addPath('/home/student/public_html/sicc/sicc/vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/views', 'SensioDistribution');
@@ -3436,6 +3443,7 @@ class appDevDebugProjectContainer extends Container
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'SiccAdminBundle' => 'Sicc\\Bundle\\AdminBundle\\SiccAdminBundle',
                 'SiccFrontBundle' => 'Sicc\\Bundle\\FrontBundle\\SiccFrontBundle',
+                'SiccContactBundle' => 'Sicc\\Bundle\\ContactBundle\\SiccContactBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
                 'SensioDistributionBundle' => 'Sensio\\Bundle\\DistributionBundle\\SensioDistributionBundle',
@@ -3449,10 +3457,12 @@ class appDevDebugProjectContainer extends Container
             'database_name' => 'sicc',
             'database_user' => 'root',
             'database_password' => 'ubuntu',
-            'mailer_transport' => 'smtp',
-            'mailer_host' => '127.0.0.1',
-            'mailer_user' => NULL,
-            'mailer_password' => NULL,
+            'mailer_transport' => 'gmail',
+            'mailer_encryption' => 'ssl',
+            'mailer_auth_mode' => 'login',
+            'mailer_host' => 'smtp.gmail.com',
+            'mailer_user' => 'thomaschvt',
+            'mailer_password' => 'nofxrhcp',
             'locale' => 'en',
             'secret' => '2b4a4e617abeaf64baa8f7c3c7042f61406e38cc',
             'database_path' => NULL,
@@ -3813,12 +3823,12 @@ class appDevDebugProjectContainer extends Container
             'swiftmailer.data_collector.class' => 'Symfony\\Bundle\\SwiftmailerBundle\\DataCollector\\MessageDataCollector',
             'swiftmailer.mailer.default.transport.name' => 'smtp',
             'swiftmailer.mailer.default.delivery.enabled' => true,
-            'swiftmailer.mailer.default.transport.smtp.encryption' => NULL,
-            'swiftmailer.mailer.default.transport.smtp.port' => 25,
-            'swiftmailer.mailer.default.transport.smtp.host' => '127.0.0.1',
-            'swiftmailer.mailer.default.transport.smtp.username' => NULL,
-            'swiftmailer.mailer.default.transport.smtp.password' => NULL,
-            'swiftmailer.mailer.default.transport.smtp.auth_mode' => NULL,
+            'swiftmailer.mailer.default.transport.smtp.encryption' => 'ssl',
+            'swiftmailer.mailer.default.transport.smtp.port' => 465,
+            'swiftmailer.mailer.default.transport.smtp.host' => 'smtp.gmail.com',
+            'swiftmailer.mailer.default.transport.smtp.username' => 'thomaschvt',
+            'swiftmailer.mailer.default.transport.smtp.password' => 'nofxrhcp',
+            'swiftmailer.mailer.default.transport.smtp.auth_mode' => 'login',
             'swiftmailer.mailer.default.transport.smtp.timeout' => 30,
             'swiftmailer.mailer.default.transport.smtp.source_ip' => NULL,
             'swiftmailer.spool.default.memory.path' => '/home/student/public_html/sicc/sicc/app/cache/dev/swiftmailer/spool/default',

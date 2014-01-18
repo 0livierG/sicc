@@ -18,6 +18,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="SiccAdminBundle">Sicc\Bundle\AdminBundle\SiccAdminBundle</parameter>
       <parameter key="SiccFrontBundle">Sicc\Bundle\FrontBundle\SiccFrontBundle</parameter>
+      <parameter key="SiccContactBundle">Sicc\Bundle\ContactBundle\SiccContactBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -31,10 +32,12 @@
     <parameter key="database_name">sicc</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">ubuntu</parameter>
-    <parameter key="mailer_transport">smtp</parameter>
-    <parameter key="mailer_host">127.0.0.1</parameter>
-    <parameter key="mailer_user">null</parameter>
-    <parameter key="mailer_password">null</parameter>
+    <parameter key="mailer_transport">gmail</parameter>
+    <parameter key="mailer_encryption">ssl</parameter>
+    <parameter key="mailer_auth_mode">login</parameter>
+    <parameter key="mailer_host">smtp.gmail.com</parameter>
+    <parameter key="mailer_user">thomaschvt</parameter>
+    <parameter key="mailer_password">nofxrhcp</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="secret">2b4a4e617abeaf64baa8f7c3c7042f61406e38cc</parameter>
     <parameter key="database_path">null</parameter>
@@ -385,12 +388,12 @@
     <parameter key="swiftmailer.data_collector.class">Symfony\Bundle\SwiftmailerBundle\DataCollector\MessageDataCollector</parameter>
     <parameter key="swiftmailer.mailer.default.transport.name">smtp</parameter>
     <parameter key="swiftmailer.mailer.default.delivery.enabled">true</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.port">25</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.host">127.0.0.1</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.username">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.password">null</parameter>
-    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.encryption">ssl</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.port">465</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.host">smtp.gmail.com</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.username">thomaschvt</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.password">nofxrhcp</parameter>
+    <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.spool.default.memory.path">/home/student/public_html/sicc/sicc/app/cache/dev/swiftmailer/spool/default</parameter>
@@ -2306,6 +2309,8 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="SiccAdminBundle">Sicc\Bundle\AdminBundle\Entity</argument>
+              <argument key="SiccFrontBundle">Sicc\Bundle\FrontBundle\Entity</argument>
+              <argument key="SiccContactBundle">Sicc\Bundle\ContactBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -2344,10 +2349,38 @@
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
                         <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
                   <argument>Sicc\Bundle\AdminBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Sicc\Bundle\FrontBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/AdminBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/FrontBundle/Entity</argument>
+                        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>Sicc\Bundle\ContactBundle\Entity</argument>
                 </call>
               </service>
             </argument>
@@ -2734,6 +2767,10 @@
         <argument>SiccFront</argument>
       </call>
       <call method="addPath">
+        <argument>/home/student/public_html/sicc/sicc/src/Sicc/Bundle/ContactBundle/Resources/views</argument>
+        <argument>SiccContact</argument>
+      </call>
+      <call method="addPath">
         <argument>/home/student/public_html/sicc/sicc/src/Acme/DemoBundle/Resources/views</argument>
         <argument>AcmeDemo</argument>
       </call>
@@ -2799,22 +2836,22 @@
       </argument>
       <argument type="service" id="swiftmailer.mailer.default.transport.eventdispatcher"/>
       <call method="setHost">
-        <argument>127.0.0.1</argument>
+        <argument>smtp.gmail.com</argument>
       </call>
       <call method="setPort">
-        <argument>25</argument>
+        <argument>465</argument>
       </call>
       <call method="setEncryption">
-        <argument>null</argument>
+        <argument>ssl</argument>
       </call>
       <call method="setUsername">
-        <argument>null</argument>
+        <argument>thomaschvt</argument>
       </call>
       <call method="setPassword">
-        <argument>null</argument>
+        <argument>nofxrhcp</argument>
       </call>
       <call method="setAuthMode">
-        <argument>null</argument>
+        <argument>login</argument>
       </call>
       <call method="setTimeout">
         <argument>30</argument>

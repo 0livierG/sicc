@@ -1,3 +1,7 @@
+sicc_contact:
+    resource: "@SiccContactBundle/Resources/config/routing.yml"
+    prefix:   /
+
 sicc_front:
     resource: "@SiccFrontBundle/Resources/config/routing.yml"
     prefix:   /

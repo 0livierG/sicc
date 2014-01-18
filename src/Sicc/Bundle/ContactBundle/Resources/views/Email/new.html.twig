@@ -19,18 +19,18 @@
     {% endif %}
 
     <div class="row">
-        <div class="span8" id="wrapper-contact-form">
+        <div class="span6" id="wrapper-contact-form">
             <form id="contact-form" action="{{ path('sicc_front_contact_envoi') }}" method="post" {{ form_enctype(form) }}>
                 {{ form_widget(form) }}
             </form>
         </div>
-        <div class="span4" id="wrapper-googlemaps">
+        <div class="span6" id="wrapper-googlemaps">
             {% include 'SiccContactBundle:Email:googleMap.html.twig' %}
             <div wrapper-info-contact>
-                <div class="info-contact"><i class="fa fa-map-marker"></i> 720 chemin de l'ESTALOT ST ANDRE DE CUBZAC GIRONDE </div>
-                <div><i class="fa fa-phone"></i> 05 57 58 61 76</div>
-                <div><i class="fa fa-mobile-phone"></i> 06 12 57 01 82</div>
-                <div><i class="fa fa-envelope"></i> sicc33@orange.fr</div>
+                <div class="info-contact"><i class="fa fa-map-marker"></i> 720 chemin de l'ESTALOT </br> 33240 Saint-André-de-Cubzac ‎</div>
+                <div class="info-contact"><i class="fa fa-phone"></i> 05 57 58 61 76</div>
+                <div class="info-contact"><i class="fa fa-mobile-phone"></i> 06 12 57 01 82</div>
+                <div class="info-contact"><i class="fa fa-envelope"></i> sicc33@orange.fr</div>
             </div>
         </div>
 

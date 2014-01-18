@@ -21,7 +21,7 @@ class EmailType extends AbstractType
             ->add('email','text',array('label'=>'', 'attr'=>array('placeholder'=>'Votre email', 'class'=>'input-xxlarge')))
             ->add('telephone','text',array('label'=>'', 'attr'=>array('placeholder'=>'Votre nom', 'class'=>'input-xxlarge')))
             ->add('objet','text', array('label'=>'', 'attr'=>array('placeholder'=>'Objet', 'class'=>'input-xxlarge')))
-            ->add('contenu','textarea',array('attr'=>array('placeholder'=>'Contenu du message',  'class'=>'contact-form-textarea')))
+            ->add('contenu','textarea',array('attr'=>array('placeholder'=>'Contenu du message',  'class'=>'input-xxlarge contact-form-textarea')))
             ->add('submit', 'submit', array('label' => 'Envoyer'));
         ;
     }

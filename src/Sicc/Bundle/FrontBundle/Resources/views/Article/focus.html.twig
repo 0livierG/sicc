@@ -2,8 +2,7 @@
 
 {% block body %}
 
-    <div class="row">
-
+    <div class="row" id="wrapper-focus-article">
        <div class="span8">
             <h4>{{ focus.titre }}</h4>
            <div id="wrapper-img-focus-article"><img src="{{ asset('img/articles/'~focus.illustration) }}"/></div>
@@ -12,16 +11,27 @@
            </p>
        </div>
 
-        <div class="span4">
-
+        <div class="span4" id="list-mini-article">
+           
+            <ul>
             {% for article in articles %}
-                <div class="row wrapper-mini-news">
-                    <h5>{{ article.titre }}</h5>
-                    <p>{{ article.description|length > 50 ? article.description|slice(0, 50) ~ '...' : article.description }}</p>
-                </div>
-            {% endfor %}
-        </div>
+                {% if article.id != focus.id %}
+                <li class="wrapper-mini-news">
+                    <h5 class="span4">
+                        <a href="{{ path('sicc_front_article_focus',{ 'path': article.path }) }}">
+                            {{ article.titre }}
+                        </a>
+                    </h5>
+                    <div class="span1 wrapper-mini-news-img">
+                        <img  src="{{ asset('img/articles/'~article.illustration) }}"/>
+                    </div>
 
+                    <p>{{ article.description|length > 50 ? article.description|slice(0, 50) ~ '...' : article.description }}</p>
+                </li>
+                    {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
     </div>
 
 {% endblock body %}
