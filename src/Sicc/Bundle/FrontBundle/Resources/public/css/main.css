@@ -186,7 +186,20 @@ p{
 }
 
 .wrapper-mini-news{
-  
+
+}
+
+/*Contact*/
+
+.contact-form-textarea{
+    width: 80%;
+    min-height: 150px;
+    max-height: 350px;
+}
+
+
+#wrapper-googlemaps{
+    text-align: left;
 }
 
 /*Footer*/

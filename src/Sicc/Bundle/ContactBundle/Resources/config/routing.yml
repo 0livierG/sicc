@@ -1,0 +1,6 @@
+sicc_contact:
+    pattern:  /contact/
+    defaults: { _controller: SiccContactBundle:Email:new }
+sicc_contact_envoi:
+    pattern:  /contact/envoi
+    defaults: { _controller: SiccContactBundle:Email:create }

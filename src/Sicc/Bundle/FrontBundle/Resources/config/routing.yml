@@ -13,3 +13,10 @@ sicc_front_article:
 sicc_front_article_focus:
     pattern:  /article/{path}
     defaults: { _controller: SiccFrontBundle:Article:focus }
+sicc_front_contact:
+    pattern:  /contact/
+    defaults: { _controller: SiccFrontBundle:Email:new }
+sicc_front_contact_envoi:
+    pattern:  /contact/envoi
+    defaults: { _controller: SiccFrontBundle:Email:create }
+

@@ -1,0 +1,7 @@
+parameters:
+#    sicc_contact.example.class: Sicc\Bundle\ContactBundle\Example
+
+services:
+#    sicc_contact.example:
+#        class: %sicc_contact.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Sicc\Bundle\AdminBundle\SiccAdminBundle(),
             new Sicc\Bundle\FrontBundle\SiccFrontBundle(),
+            new Sicc\Bundle\ContactBundle\SiccContactBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

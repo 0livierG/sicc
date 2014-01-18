@@ -1,0 +1,10 @@
+Email envoyé depuis le site par {{ email.civilite }} {{ email.nom }} {{ email.prenom }} le {{ "now" | date("Y-m-d H:i") }}.
+
+Email de l'expéditeur: {{ email.email }}
+
+N° de téléphone de l'expéditeur: {{ email.telephone }}
+
+Sujet: {{ email.objet }}
+
+Message:
+{{ email.contenu }}
