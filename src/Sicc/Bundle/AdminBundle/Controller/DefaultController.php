@@ -8,6 +8,7 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $countArticles = $em->getRepository('SiccAdminBundle:Article')->findOneByCounted();

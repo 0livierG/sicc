@@ -19,6 +19,9 @@ class AppKernel extends Kernel
             new Sicc\Bundle\AdminBundle\SiccAdminBundle(),
             new Sicc\Bundle\FrontBundle\SiccFrontBundle(),
             new Sicc\Bundle\ContactBundle\SiccContactBundle(),
+            new Sicc\Bundle\UserBundle\SiccUserBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

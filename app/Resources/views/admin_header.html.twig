@@ -17,25 +17,37 @@
     <link rel="stylesheet" href="{{ asset('bundles/siccadmin/css/style.css') }}">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+
+
 </head>
 
 <body>
 
-<div id="wrapper">
+<div {% if is_granted('ROLE_ADMIN') %}id="wrapper"{% endif %}>
 
     <!-- Sidebar -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
+        <div class="navbar-header pull-left">
+            {% if is_granted('ROLE_ADMIN') %}
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            {% endif %}
             <a class="navbar-brand" href="index.html">Sicc</a>
         </div>
 
+        <div class="navbar-header pull-right">
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="pull-right btn btn-danger" role="button" href="{{ path('logout') }}" onclick="return confirmationJs('Souhaitez-vous quitter cette section')" title="Déconnexion">
+                    <span class="fa fa-sign-out"></span>
+                </a>
+            {% endif %}
+        </div>
+        {% if is_granted('ROLE_ADMIN') %}
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
@@ -44,9 +56,12 @@
                 <li><a href="{{ path('admin_realisation') }}"><i class="fa fa-fire-extinguisher"></i> Réalisations</a></li>
                 <li><a href="{{ path('admin_fichier') }}"><i class="fa fa-file"></i> Fichiers</a></li>
                 <li><a href="{{ path('admin_groupemembre') }}"><i class="fa fa-credit-card"></i> Groupes</a></li>
+
             </ul>
         </div><!-- /.navbar-collapse -->
+        {% endif %}
     </nav>
+
     <div class="page-wrapper">
         {% block body %}
 
@@ -65,6 +80,7 @@
     <script src="{{ asset('bundles/siccadmin/js/morris/chart-data-morris.js') }}"></script>
     <script src="{{ asset('bundles/siccadmin/js/tablesorter/jquery.tablesorter.js') }}"></script>
     <script src="{{ asset('bundles/siccadmin/js/tablesorter/tables.js') }}"></script>
+    <script src="{{ asset('bundles/siccadmin/js/script.js') }}"></script>
 
 
 {% endblock %}

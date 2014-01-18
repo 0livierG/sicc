@@ -10,3 +10,16 @@ sicc_admin:
     resource: "@SiccAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+login:
+    pattern:   /login
+    defaults:  { _controller: SiccUserBundle:Security:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern:   /logout
+
+administration_accueil:
+    pattern:  /administration
+
