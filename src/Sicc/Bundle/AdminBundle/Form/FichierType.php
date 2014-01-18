@@ -17,6 +17,7 @@ class FichierType extends AbstractType
         $builder
             ->add('titre','text',array("label"=>"Titre du document"))
             ->add('url','file',array('label'=>"Document","data_class"=>null))
+            ->add('description','text',array('label'=>"Description"))
             ->add('groupes','entity', array('label' => 'Groupes autorisés à consulter le fichier','class' => 'Sicc\Bundle\AdminBundle\Entity\GroupeMembre','multiple' => true))
 
         ;
