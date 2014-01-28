@@ -1,3 +1,3 @@
-sicc_user_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: SiccUserBundle:Default:index }
+admin_membre:
+    pattern:  /administration/membre
+    defaults: { _controller: SiccUserBundle:Membre:index }

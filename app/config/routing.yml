@@ -10,6 +10,10 @@ sicc_admin:
     resource: "@SiccAdminBundle/Resources/config/routing.yml"
     prefix:   /
 
+sicc_membre:
+    resource: "@SiccUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 administration_accueil:
     pattern:  /administration
 
@@ -22,7 +26,7 @@ fos_user_profile:
 
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+    prefix: /administration/register
 
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
