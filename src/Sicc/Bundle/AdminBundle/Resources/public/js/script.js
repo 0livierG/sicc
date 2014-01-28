@@ -5,3 +5,7 @@ function confirmationJs(texte){
     var sur= confirm(texte);
     return sur;
 }
+
+$(document).ready(function(){
+    $('.redactor_content').redactor();
+});

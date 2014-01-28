@@ -1,90 +1,40 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-</div>
-<div class="bloc-black-accueil">
-    <div class="container">
-        <div class="row">
-            <div id="slider" class="span12">
-                <div id='coin-slider'>
-                        <a href="" target="_blank">
-                            <img src='{{ asset('bundles/siccfront/img/beta.jpg') }}'>
-                        <span>
-                            Description for img01
-                        </span>
-                        </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container">
     <div class="row">
-            <div class="span5 border-h3"></div>
-            <div class="span2"><h3>Nos rubriques</h3></div>
-            <div class="span5 border-h3"></div>
-    </div>
-
-    <div class="row" id="container-top-box-accueil">
-
-            <div class="span3 top-box-accueil">
-                <div class="inner">
-                    <h4 class="top-box-accueil-title">Les réalisations</h4>
-                    <p class="top-box-accueil-content">
-                        <a href="{{ path('sicc_front_realisation') }}">
-                            <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/beta.jpg') }}">
-                        </a>
-                    </p>
-               </div>
-            </div>
-
-            <div class="span3 top-box-accueil">
-                <div class="inner">
-                    <h4 class="top-box-accueil-title">Les articles</h4>
-                    <p class="top-box-accueil-content">
-                        <a href="#">
-                            <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/beta.jpg') }}">
-                        </a>
-
-                    </p>
-                </div>
-            </div>
-
-            <div class="span3 top-box-accueil">
-                <div class="inner">
-                    <h4 class="top-box-accueil-title">Téléchargement</h4>
-                    <p class="top-box-accueil-content">
-                        <a href="#">
-                            <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/download_1.jpg') }}">
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-            <div class="span3 top-box-accueil">
-                <div class="inner">
-                    <h4 class="top-box-accueil-title">Contacts</h4>
-                    <p class="top-box-accueil-content">
-                        <a href="{{ path('sicc_contact') }}">
-                            <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/contact.jpg') }}">
-                        </a>
-                    </p>
-                </div>
-            </div>
-
-    </div>
-
-    <div class="row" id="content-second-bloc-acceuil">
         <div class="span12">
-            <div>
-                <h2>Qui sommes nous</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
-                </p>
-            </div>
+            <h2>Les téléchargement</h2>
         </div>
     </div>
+    <div class="row">
+        <div class="span3">
+            <img class="top-box-accueil-img" src="{{ asset('bundles/siccfront/img/download_1.jpg') }}">
+        </div>
+        <p class="span9">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
+        </p>
+    </div>
+    <div class="row">
+        <div class="span4 border-h3"></div>
+        <div class="span4"><h3>Téléchargements accessibles</h3></div>
+        <div class="span4 border-h3"></div>
+    </div>
+    <div class="row">
+        {% for fichier in fichiers %}
+            <div class="span2 link-download-fichier">
+                <a href="{{ asset('fichiers/'~fichier.url) }}" class="row btn btn-success clear">
+                    <i class="fa fa-4x fa-download"></i>
+                </a>
+
+                <div class="row">
+                    <h5 class="clear nom-fichier-download">{{ fichier.titre }}</h5>
+                </div>
+                <div class="row">
+                    <p class="span2">{{ fichier.description }}</p>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock body %}

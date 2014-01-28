@@ -228,6 +228,15 @@ p{
     text-align: left;
 }
 
+.link-download-fichier{
+    text-align: center;
+}
+
+.nom-fichier-download{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /*Footer*/
 #copyright{
 

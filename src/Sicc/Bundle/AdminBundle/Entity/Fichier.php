@@ -29,6 +29,13 @@ class Fichier
     private $titre;
 
     /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="url", type="string", length=255)
@@ -103,5 +110,18 @@ class Fichier
     public function getUrl()
     {
         return $this->url;
+    }
+
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+
+    public function getDescription()
+    {
+        return $this->description;
     }
 }
