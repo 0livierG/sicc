@@ -19,11 +19,9 @@ class MembreController extends Controller
      */
     public function indexAction()
     {
-        //return $this->render('SiccUserBundle:Membre:index.html.twig');7
-        /*$userManager*/
+
         $userManager = $this->get('fos_user.user_manager');
         $entities=$userManager->findUsers();
-       // var_dump($entities);
         return array(
             'entities' =>$entities,
         );
