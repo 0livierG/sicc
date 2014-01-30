@@ -72,3 +72,12 @@ fos_user:
     db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                       # Le nom du firewall derrière lequel on utilisera ces utilisateurs
     user_class:    Sicc\Bundle\UserBundle\Entity\Membre # La classe de l'entité User que nous utilisons
+    registration:
+        form:
+            type:  sicc_user_registration
+        confirmation:
+            from_email: # Use this node only if you don't want the global email address for the confirmation email
+                address:        noreply@toto.com
+                sender_name:    toto
+            enabled:    true # change to true for required email confirmation
+            template:   FOSUserBundle:Registration:email.txt.twig

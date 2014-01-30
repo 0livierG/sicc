@@ -25,6 +25,7 @@
                                 <th>Civilite</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
+                                <th>Société</th>
                                 <th>E-mail</th>
                                 <th>Dernière connexion</th>
                                 <th>Actions</th>
@@ -34,9 +35,10 @@
                             {% for entity in entities %}
                                 <tr>
 
+                                    <td>{{ entity.civilite }}</td>
                                     <td>{{ entity.username }}</td>
-                                    <td>{{ entity.email }}</td>
-                                    <td>{{ entity.email }}</td>
+                                    <td>{{ entity.prenom }}</td>
+                                    <td>{{ entity.societe }}</td>
                                     <td>{{ entity.email }}</td>
                                     <td>{{ entity.lastLogin|date('Y-m-d H:i:s')  }}</td>
                                     <td>
@@ -50,7 +52,7 @@
                         </table>
                     </div>
                     <div class="text-left">
-                        <a href="{{ path('admin_groupemembre_create') }}">
+                        <a href="{{ path('fos_user_registration_register') }}">
                             <button class="btn btn-success"><i class="fa fa-plus-circle"></i> Créer</button>
                         </a>
                     </div>
