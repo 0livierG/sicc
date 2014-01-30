@@ -5,10 +5,10 @@ parameters:
     database_port: null
     database_name: sicc
     database_user: root
-    database_password: null
+    database_password: ubuntu
     mailer_transport: gmail
     mailer_host: smtp.gmail.com
     mailer_user: thomaschvt
     mailer_password: nofxrhcp
     locale: fr
-    secret: 2b4a4e617abeaf64baa8f7c3c7042f61406e38cc
+    secret: 9435a7ff87e3d95dba1f4ea1083f109d66

@@ -2,6 +2,8 @@ parameters:
 #    sicc_user.example.class: Sicc\Bundle\UserBundle\Example
 
 services:
-#    sicc_user.example:
-#        class: %sicc_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    sicc_user.registration.form.type:
+        class: Sicc\Bundle\UserBundle\Form\MembreType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: sicc_bundle_userbundle_membre }

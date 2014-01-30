@@ -73,3 +73,21 @@ admin_fichier_edit:
 admin_fichier_update:
     pattern:  /administration/fichier/update/{id}
     defaults: { _controller: SiccAdminBundle:Fichier:update }
+admin_membre:
+    pattern:  /administration/membres
+    defaults: { _controller: SiccUserBundle:Membre:index }
+admin_membre_create:
+    pattern:  /administration/membres/create
+    defaults: { _controller: SiccUserBundle:Membre:create }
+admin_membre_show:
+    pattern:  /administration/membres/show/{id}
+    defaults: { _controller: SiccUserBundle:Membre:show }
+admin_membre_delete:
+    pattern:  /administration/membres/delete/{id}
+    defaults: { _controller: SiccUserBundle:Membre:delete }
+admin_membre_edit:
+    pattern:  /administration/membres/edit/{id}
+    defaults: { _controller: SiccUserBundle:Membre:edit }
+admin_membre_update:
+    pattern:  /administration/membres/update/{id}
+    defaults: { _controller: SiccUserBundle:Membre:update }

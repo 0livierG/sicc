@@ -124,4 +124,27 @@ class Fichier
     {
         return $this->description;
     }
+
+    /**
+     * Add groupes
+     *
+     * @param \Sicc\Bundle\AdminBundle\Entity\GroupeMembre $groupes
+     * @return Fichier
+     */
+    public function addGroupe(\Sicc\Bundle\AdminBundle\Entity\GroupeMembre $groupes)
+    {
+        $this->groupes[] = $groupes;
+
+        return $this;
+    }
+
+    /**
+     * Remove groupes
+     *
+     * @param \Sicc\Bundle\AdminBundle\Entity\GroupeMembre $groupes
+     */
+    public function removeGroupe(\Sicc\Bundle\AdminBundle\Entity\GroupeMembre $groupes)
+    {
+        $this->groupes->removeElement($groupes);
+    }
 }
