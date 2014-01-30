@@ -25,14 +25,12 @@
                 <a href="{{ asset('fichiers/'~fichier.url) }}" class="row btn btn-success clear">
                     <i class="fa fa-4x fa-download"></i>
                 </a>
-
                 <div class="row">
                     <h5 class="clear nom-fichier-download">{{ fichier.titre }}</h5>
                 </div>
                 <div class="row">
                     <p class="span2">{{ fichier.description }}</p>
                 </div>
-
             </div>
         {% endfor %}
     </div>

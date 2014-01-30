@@ -35,8 +35,6 @@
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">ubuntu</parameter>
     <parameter key="mailer_transport">gmail</parameter>
-    <parameter key="mailer_encryption">ssl</parameter>
-    <parameter key="mailer_auth_mode">login</parameter>
     <parameter key="mailer_host">smtp.gmail.com</parameter>
     <parameter key="mailer_user">thomaschvt</parameter>
     <parameter key="mailer_password">nofxrhcp</parameter>
@@ -367,9 +365,12 @@
     <parameter key="monolog.handler.cube.class">Monolog\Handler\CubeHandler</parameter>
     <parameter key="monolog.handler.amqp.class">Monolog\Handler\AmqpHandler</parameter>
     <parameter key="monolog.handler.error_log.class">Monolog\Handler\ErrorLogHandler</parameter>
+    <parameter key="monolog.handler.loggly.class">Monolog\Handler\LogglyHandler</parameter>
     <parameter key="monolog.activation_strategy.not_found.class">Symfony\Bundle\MonologBundle\NotFoundActivationStrategy</parameter>
     <parameter key="monolog.handler.fingers_crossed.class">Monolog\Handler\FingersCrossedHandler</parameter>
     <parameter key="monolog.handler.fingers_crossed.error_level_activation_strategy.class">Monolog\Handler\FingersCrossed\ErrorLevelActivationStrategy</parameter>
+    <parameter key="monolog.handler.mongo.class">Monolog\Handler\MongoDBHandler</parameter>
+    <parameter key="monolog.mongo.client.class">MongoClient</parameter>
     <parameter key="monolog.handlers_to_channels" type="collection">
       <parameter key="monolog.handler.console">null</parameter>
       <parameter key="monolog.handler.main">null</parameter>
@@ -400,6 +401,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.spool.default.memory.path">/home/student/public_html/sicc/sicc/app/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
+    <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
     <parameter key="swiftmailer.spool.enabled">true</parameter>
     <parameter key="swiftmailer.delivery.enabled">true</parameter>
@@ -794,7 +796,7 @@
       <tag name="translation.loader" alias="yml"/>
     </service>
     <service id="translation.loader.xliff" class="Symfony\Component\Translation\Loader\XliffFileLoader">
-      <tag name="translation.loader" alias="xlf" legacy-alias="xliff"/>
+      <tag name="translation.loader" alias="xlf" legacy_alias="xliff" legacy-alias="xliff"/>
     </service>
     <service id="translation.loader.po" class="Symfony\Component\Translation\Loader\PoFileLoader">
       <tag name="translation.loader" alias="po"/>
@@ -1732,7 +1734,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>52da9df89f672</argument>
+            <argument>52e820fe119a0</argument>
           </service>
         </argument>
       </argument>
@@ -1968,9 +1970,9 @@
                   </service>
                 </argument>
                 <argument type="collection">
+                  <argument key="login_path">login</argument>
                   <argument key="always_use_default_target_path">true</argument>
                   <argument key="default_target_path">/administration</argument>
-                  <argument key="login_path">login</argument>
                   <argument key="target_path_parameter">_target_path</argument>
                   <argument key="use_referer">false</argument>
                 </argument>
@@ -2064,7 +2066,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>52da9df89f672</argument>
+            <argument>52e820fe119a0</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
@@ -2398,13 +2400,13 @@
     <service id="doctrine.dbal.logger.profiling.default" class="Doctrine\DBAL\Logging\DebugStack" public="false"/>
     <service id="doctrine.dbal.default_connection" class="stdClass" factory-method="createConnection" factory-service="doctrine.dbal.connection_factory">
       <argument type="collection">
-        <argument key="dbname">sicc</argument>
+        <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
+        <argument key="dbname">sicc</argument>
         <argument key="user">root</argument>
         <argument key="password">ubuntu</argument>
         <argument key="charset">UTF8</argument>
-        <argument key="driver">pdo_mysql</argument>
         <argument key="driverOptions" type="collection"/>
       </argument>
       <argument type="service">
