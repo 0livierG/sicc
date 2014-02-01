@@ -17,4 +17,74 @@ class Membre extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="civilite", type="string", length=255)
+     */
+    protected $civilite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prenom", type="string", length=255)
+     */
+    protected $prenom;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="societe", type="string", length=255)
+     */
+    protected $societe;
+
+    /**
+     * @param mixed $civilite
+     */
+    public function setCivilite($civilite)
+    {
+        $this->civilite = $civilite;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCivilite()
+    {
+        return $this->civilite;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $societe
+     */
+    public function setSociete($societe)
+    {
+        $this->societe = $societe;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSociete()
+    {
+        return $this->societe;
+    }
 }

@@ -43,7 +43,7 @@
 
         <div class="navbar-header pull-right">
             {% if is_granted('ROLE_ADMIN') %}
-                <a class="pull-right btn btn-danger" role="button" href="{{ path('logout') }}" onclick="return confirmationJs('Souhaitez-vous quitter cette section')" title="Déconnexion">
+                <a class="pull-right btn btn-danger" role="button" href="{{ path('fos_user_security_logout') }}" onclick="return confirmationJs('Souhaitez-vous quitter cette section')" title="Déconnexion">
                     <span class="fa fa-sign-out"></span>
                 </a>
             {% endif %}
@@ -57,6 +57,7 @@
                 <li><a href="{{ path('admin_realisation') }}"><i class="fa fa-fire-extinguisher"></i> Réalisations</a></li>
                 <li><a href="{{ path('admin_fichier') }}"><i class="fa fa-file"></i> Fichiers</a></li>
                 <li><a href="{{ path('admin_groupemembre') }}"><i class="fa fa-credit-card"></i> Groupes</a></li>
+                <li><a href="{{ path('admin_membre') }}"><i class="fa fa-user"></i> Membres</a></li>
 
             </ul>
         </div><!-- /.navbar-collapse -->
