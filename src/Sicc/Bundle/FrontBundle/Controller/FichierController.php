@@ -11,8 +11,13 @@ class FichierController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $user = $this->getUser();
+        $userGroupes = $user->getGroupes();
+        var_dump($userGroupes);
 
-        $entities = $em->getRepository('SiccAdminBundle:Fichier')->findAll();
+
+
+            $entities = $em->getRepository('SiccAdminBundle:Fichier')->findAll();
         return $this->render('SiccFrontBundle:Fichier:index.html.twig',array('fichiers'=>$entities));
 
     }

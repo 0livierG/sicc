@@ -41,6 +41,19 @@ class Membre extends BaseUser
     protected $societe;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Sicc\Bundle\AdminBundle\Entity\GroupeMembre", inversedBy="membres")
+     * @ORM\JoinTable(name="membresgroupes_membres")
+     */
+    private $groupes;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->groupes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * @param mixed $civilite
      */
     public function setCivilite($civilite)
@@ -86,5 +99,9 @@ class Membre extends BaseUser
     public function getSociete()
     {
         return $this->societe;
+    }
+
+    public function getGroupes(){
+        return $this->groupes;
     }
 }

@@ -42,6 +42,15 @@ class GroupeMembre
     private $fichiers;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Sicc\Bundle\UserBundle\Entity\Membre", mappedBy="groupes")
+     */
+    private $membres;
+
+    public function __construct() {
+        $this->fichiers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return integer 
@@ -95,6 +104,10 @@ class GroupeMembre
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function getFichiers(){
+        return $this->fichiers;
     }
 
     public function __toString(){
