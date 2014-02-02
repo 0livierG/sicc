@@ -54,7 +54,6 @@ registration:
 
             Cordialement,
             L'équipe.
-
 # Password resetting
 resetting:
     password_already_requested: Un nouveau mot de passe a déjà été demandé pour cet utilisateur dans les dernières 24 heures.
@@ -84,6 +83,8 @@ layout:
     register: Inscription
     logged_in_as: Connecté en tant que %username%
 
+update:
+    submit: Mettre à jour
 # Form field labels
 form:
     group_name: "Nom du groupe :"
@@ -97,3 +98,4 @@ form:
     prenom: "Prénom :"
     societe: "Société :"
     civilite: "Civilité :"
+    locked: "Désactiver"

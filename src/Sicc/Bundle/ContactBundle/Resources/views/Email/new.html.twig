@@ -20,7 +20,7 @@
 
     <div class="row">
         <div class="span6" id="wrapper-contact-form">
-            <form id="contact-form" action="{{ path('sicc_front_contact_envoi') }}" method="post" {{ form_enctype(form) }}>
+            <form id="contact-form" action="{{ path('sicc_contact_envoi') }}" method="post" {{ form_enctype(form) }}>
                 {{ form_start(form) }}
                 {{ form_errors(form) }}
 

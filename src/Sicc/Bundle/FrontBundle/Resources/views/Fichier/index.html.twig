@@ -19,8 +19,10 @@
         <div class="span4"><h3>Téléchargements accessibles</h3></div>
         <div class="span4 border-h3"></div>
     </div>
+    {% for groupe in groupes %}
     <div class="row">
-        {% for fichier in fichiers %}
+        <h3>{{ groupe.intitule }}</h3>
+        {% for fichier in groupe.fichiers %}
             <div class="span2 link-download-fichier">
                 <a href="{{ asset('fichiers/'~fichier.url) }}" class="row btn btn-success clear">
                     <i class="fa fa-4x fa-download"></i>
@@ -34,5 +36,5 @@
             </div>
         {% endfor %}
     </div>
-
+    {% endfor %}
 {% endblock body %}

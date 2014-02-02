@@ -1,7 +1,21 @@
 admin_membre:
     pattern:  /administration/membre
     defaults: { _controller: SiccUserBundle:Membre:index }
-
 admin_membre_create:
     pattern:  /administration/membre/create
-    defaults: { _controller: SiccUserBundle:Membre:index }
+    defaults: { _controller: SiccUserBundle:Membre:create }
+admin_membre_show:
+    pattern:  /administration/membre/show/{id}
+    defaults: { _controller: SiccUserBundle:Membre:show }
+admin_membre_delete:
+    pattern:  /administration/membre/delete/{id}
+    defaults: { _controller: SiccUserBundle:Membre:delete }
+admin_membre_edit:
+    pattern:  /administration/membre/edit/{id}
+    defaults: { _controller: SiccUserBundle:Membre:edit }
+membre_edit:
+    pattern:  /membre/edit/{id}
+    defaults: { _controller: SiccUserBundle:Membre:edit }
+admin_membre_update:
+    pattern:  /administration/membre/update/{id}
+    defaults: { _controller: SiccUserBundle:Membre:update }

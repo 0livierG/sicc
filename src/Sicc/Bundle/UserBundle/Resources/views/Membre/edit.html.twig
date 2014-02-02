@@ -1,0 +1,72 @@
+
+{% extends is_granted('ROLE_ADMIN') == false
+    ? "::base.html.twig"
+    : "::admin_header.html.twig"
+%}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Création d'un utilisateur</h1>
+            <ol class="breadcrumb">
+                <li class="active"><i class="fa fa-dashboard"></i> Utilisateur</li>
+            </ol>
+        </div>
+    </div><!-- /.row -->
+
+    <div class="row">
+
+        {{ form_start(edit_form) }}
+        {{ form_errors(edit_form) }}
+
+        <div class="col-lg-1"></div>
+        <div class="col-lg-4">
+
+            {{ form_label(edit_form.civilite) }}
+            {{ form_errors(edit_form.civilite) }} :
+            {% for child in edit_form.civilite %}
+                <label class="checkbox-inline">
+                    {{ form_widget(child)}}
+                    {{ child.vars.label }}
+                </label>
+            {% endfor %}
+
+            <div class="form-group">
+                {{ form_label(edit_form.societe) }}
+                {{ form_errors(edit_form.societe) }}
+                {{ form_widget(edit_form.societe, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(edit_form.username) }}
+                {{ form_errors(edit_form.username) }}
+                {{ form_widget(edit_form.username, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(edit_form.prenom) }}
+                {{ form_errors(edit_form.prenom) }}
+                {{ form_widget(edit_form.prenom, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            <div class="form-group">
+                {{ form_label(edit_form.email) }}
+                {{ form_errors(edit_form.email) }}
+                {{ form_widget(edit_form.email, {'attr': {'class': 'form-control'}}) }}
+            </div>
+
+            {{ form_rest(edit_form) }}
+            <div>
+                <input type="submit" class="btn btn-lg btn-primary btn-block" value="{{ 'update.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+
+        </div>
+
+        {{ form_end(edit_form) }}
+    </div>
+
+
+
+{% endblock %}

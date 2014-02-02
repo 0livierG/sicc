@@ -39,7 +39,7 @@ class GroupeMembre
     /**
      * @ORM\ManyToMany(targetEntity="Fichier", mappedBy="groupes")
      */
-    private $fichiers;
+    public  $fichiers;
 
     /**
      * @ORM\ManyToMany(targetEntity="Sicc\Bundle\UserBundle\Entity\Membre", mappedBy="groupes")
@@ -48,6 +48,7 @@ class GroupeMembre
 
     public function __construct() {
         $this->fichiers = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->membres = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -108,6 +109,10 @@ class GroupeMembre
 
     public function getFichiers(){
         return $this->fichiers;
+    }
+
+    public function getMembres(){
+        return $this->membres;
     }
 
     public function __toString(){

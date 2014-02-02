@@ -44,7 +44,7 @@ class Membre extends BaseUser
      * @ORM\ManyToMany(targetEntity="Sicc\Bundle\AdminBundle\Entity\GroupeMembre", inversedBy="membres")
      * @ORM\JoinTable(name="membresgroupes_membres")
      */
-    private $groupes;
+    public  $groupes;
 
 
     public function __construct()
