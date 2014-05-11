@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: mysql5-3.pro
+    database_port: null
+    database_name: pixagone-verd
+    database_user: pixagone-verd
+    database_password: JTyzDtZK
+    mailer_transport: smtp
+    mailer_host: smtp.cymoz.com
+    mailer_user: test
+    mailer_password: JTyzDtZK
+    locale: fr
+    secret: 2b4a4e617abeaf64baa8f7c3c7042f61406e38cc

@@ -1,0 +1,18 @@
+admin_fichier:
+    pattern:  /
+    defaults: { _controller: SiccAdminBundle:Fichier:index }
+admin_fichier_create:
+    pattern:  /create
+    defaults: { _controller: SiccAdminBundle:Fichier:create }
+admin_fichier_show:
+    pattern:  /show/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:show }
+admin_fichier_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:delete }
+admin_fichier_edit:
+    pattern:  /edit/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:edit }
+admin_fichier_update:
+    pattern:  /update/{id}
+    defaults: { _controller: SiccAdminBundle:Fichier:update }

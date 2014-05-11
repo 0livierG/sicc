@@ -8,10 +8,64 @@
             <div id="slider" class="span12">
                 <div id='coin-slider'>
                         <a href="" target="_blank">
-                            <img src='{{ asset('bundles/siccfront/img/beta.jpg') }}'>
+                            <img src='{{ asset('img/realisations/chu_clermont_ferrand.jpg') }}'>
                         <span>
-                            Description for img01
+                            CHU de Clermont-Ferrand
                         </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/chu_bordeaux_pole_ouest.jpg') }}'>
+                            <span>
+                                CHU de Bordeaux Pole Ouest
+                            </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/hopital_rochefort.jpg') }}'>
+                                <span>
+                                    Centre Hospitalier de Rochefort
+                                </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/centre_hospitalier_bourg_en_bresse.jpg') }}'>
+                                <span>
+                                    Centre Hospitalier de Bourg en Bresse
+                                </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/college_floirac.jpg') }}'>
+                                    <span>
+                                        Collège de Floirac : Coordination SSI
+                                    </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/arena_bordeaux.jpg') }}'>
+                                        <span>
+                                            Arena Bordeaux : Etudes de conception SSI
+                                        </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/ilot_sud_ouest_sainte_catherine.jpg') }}'>
+                            <span>
+                                Commerces et logements place Sainte Catherine : Prévention Incendie & Coordination SSI
+                            </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/hopital_casablanca.jpg') }}'>
+                                <span>
+                                   Hôpital CASABLANCA : Etudes Prévention Incendie
+                                </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/mediatheque_pau.jpg') }}'>
+                                    <span>
+                                       Médiathèque de Pau : Coordination SSI
+                                    </span>
+                        </a>
+                        <a href="" target="_blank">
+                            <img src='{{ asset('img/realisations/cite_surf_ocean_biarritz.jpg') }}'>
+                                        <span>
+                                          Cité du surf & de l'océan Biarritz : Coordination SSI et conseil Prévention Incendie
+                                        </span>
                         </a>
                 </div>
             </div>
@@ -21,7 +75,7 @@
 <div class="container">
     <div class="row">
             <div class="span5 border-h3"></div>
-            <div class="span2"><h3>Nos rubriques</h3></div>
+            <div class="span2"><h3><span>Nos</span> rubriques</h3></div>
             <div class="span5 border-h3"></div>
     </div>
 
@@ -73,18 +127,52 @@
             </div>
 
     </div>
-
+    <div class="row">
+        <div class="span5 border-h3"></div>
+        <div class="span2"><h3>Société & Expertise</h3></div>
+        <div class="span5 border-h3"></div>
+    </div>
     <div class="row" id="content-second-bloc-acceuil">
-        <div class="span12">
-            <div>
-                <h2>Qui sommes nous</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ullamcorper dolor eu orci auctor mattis. Nullam eget pretium velit. Nullam vestibulum luctus sollicitudin. Mauris fermentum mauris urna, vel imperdiet nunc fringilla et. Aliquam consectetur malesuada dolor, accumsan aliquam est laoreet vitae. Duis vel sapien eget enim aliquet tempus suscipit vel arcu. Quisque mauris nibh, mollis id sodales at, egestas in tortor. Fusce a mi vel ante vehicula commodo. Sed et erat nunc. Suspendisse volutpat orci turpis, et pharetra libero suscipit ut. Nunc ullamcorper nisi ac enim semper, et dapibus nisl dictum. Nunc sollicitudin vulputate ligula at malesuada. Quisque luctus libero eros, egestas laoreet enim malesuada vehicula.
-                </p>
+        <div class="span6">
+            <h2>
+                {{ ("now"|date("Y")-1996) }} ans d'expérience dans la sécurité incendie</h2>
+            <div class='row'>
+                <div class="span2">
+                    <img src="{{ asset('../bundles/siccfront/images/logo_sicc.png') }}" style="float:left;margin-right:20px;" >
+                </div>
+                <div class="span4">
+                    <p>
+                        Notre société possède une solide expérience dans le domaine de la sécurité incendie, secteur dans lequel elle opère depuis 1996.<br>
+                        Nous mettons à votre disposition notre professionnalisme et notre expérience pour pouvoir satisfaire chacune de vos exigences.
+                    </p>
+                </div>
             </div>
         </div>
+
+        <div class="span6">
+            <div>
+                <h2>Nos Prestations et spécialisation</h2>
+                <p>
+                    La société S.I.C.C  réalise les prestations spécialisées suivantes :
+
+                <ul>
+                    <li>A.M.O - Assistance à Maîtrise d'ouvrage en incendie</li>
+                    <li>CONSEIL PREVENTION au stade du Concours</li>
+                    <li>M.O.E - Maîtrise d'oeuvre en incendie</li>
+                    <li>Audit/Diagnostics & conseils en prévention incendie</li>
+                    <li>Coordination SSI</li>
+                    <li>Formation spécifique en incendie et prévention</li>
+
+
+                </ul>
+
+
+                En outre, nous sommes spécialisés dans les ERP/IGH & ERT et plus particulièrement dans le milieu hospitalier.
+                </p>
+
+            </div>
+        </div>
+
     </div>
+
 {% endblock body %}

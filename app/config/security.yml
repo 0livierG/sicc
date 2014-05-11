@@ -41,4 +41,5 @@ security:
 
     access_control:
         - { path: ^/administration, roles: ROLE_ADMIN }
+        - { path: ^/telechargement, roles: ROLE_USER }
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

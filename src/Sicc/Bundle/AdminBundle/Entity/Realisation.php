@@ -240,4 +240,8 @@ class Realisation
     {
         return $this->path;
     }
+
+    public function __toString(){
+        return $this->getTitre();
+    }
 }

@@ -1,0 +1,8 @@
+bo_media_list:
+    pattern:  /list/{rootdirname}/{types}
+    defaults: { _controller: "SiccAdminBundle:Media:list", rootdirname:  'media',types: 'pictures' }
+    requirements:
+        rootdirname: .+
+bo_media_add:
+    pattern:  /add
+    defaults: { _controller: "SiccAdminBundle:Media:add" }

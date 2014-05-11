@@ -29,7 +29,8 @@ class MembreType extends AbstractType
             ))
             ->add('prenom', 'text', array('label' => 'form.prenom', 'translation_domain' => 'FOSUserBundle'))
             ->add('societe','text', array('label' => 'form.societe', 'translation_domain' => 'FOSUserBundle'))
-           // ->add('groupes','entity',array('class' => 'Sicc\Bundle\AdminBundle\Entity\GroupeMembre','multiple'=>true));
+            ->add('groupes','entity',array('class' => 'Sicc\Bundle\AdminBundle\Entity\GroupeMembre','multiple'=>true));
+
         ;
     }
     

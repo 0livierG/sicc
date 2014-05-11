@@ -1,0 +1,18 @@
+admin_realisation:
+    pattern:  /
+    defaults: { _controller: SiccAdminBundle:Realisation:index }
+admin_realisation_create:
+    pattern:  /create
+    defaults: { _controller: SiccAdminBundle:Realisation:create }
+admin_realisation_show:
+    pattern:  /show/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:show }
+admin_realisation_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:delete }
+admin_realisation_edit:
+    pattern:  /edit/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:edit }
+admin_realisation_update:
+    pattern:  /update/{id}
+    defaults: { _controller: SiccAdminBundle:Realisation:update }

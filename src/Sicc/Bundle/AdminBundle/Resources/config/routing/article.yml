@@ -1,0 +1,18 @@
+admin_article:
+    pattern:  /
+    defaults: { _controller: SiccAdminBundle:Article:index }
+admin_article_create:
+    pattern:  //create
+    defaults: { _controller: SiccAdminBundle:Article:create }
+admin_article_show:
+    pattern:  //show/{id}
+    defaults: { _controller: SiccAdminBundle:Article:show }
+admin_article_delete:
+    pattern:  //delete/{id}
+    defaults: { _controller: SiccAdminBundle:Article:delete }
+admin_article_edit:
+    pattern:  //edit/{id}
+    defaults: { _controller: SiccAdminBundle:Article:edit }
+admin_article_update:
+    pattern:  //update/{id}
+    defaults: { _controller: SiccAdminBundle:Article:update }
